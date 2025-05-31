@@ -1,200 +1,207 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margen: 0;
+    relleno: 0;
+    tamaño de caja: caja de borde;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
+html, cuerpo {
+    altura: 100%;
+    familia de fuentes: Arial, sans-serif;
 }
 
-body {
-    background-image: url('fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+cuerpo.diseño {
+    pantalla: flex;
+    flexión-dirección: columna;
+    altura mínima: 100vh;
+    imagen de fondo: url('fondo.jpg');
+    tamaño de fondo: portada;
+    posición de fondo: centro;
+    repetición de fondo: no repetir;
     color: #fff;
-    position: relative;
+    posición: relativa;
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0);
-    z-index: -1;
+/* Fondo oscuro semitransparente */
+cuerpo::antes {
+    contenido: '';
+    posición: absoluta;
+    arriba: 0;
+    izquierda: 0;
+    derecha: 0;
+    abajo: 0;
+    fondo: rgba(0, 0, 0, 0);
+    índice z: -1;
 }
 
-#playAudio {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.6);
+#reproducirAudio {
+    posición: fija;
+    arriba: 0;
+    izquierda: 0;
+    ancho: 100%;
+    altura: 100%;
+    pantalla: flex;
+    justificar-contenido: centro;
+    alinear-elementos: centro;
+    fondo: rgba(0, 0, 0, 0.6);
     color: #fff;
-    font-size: 2rem;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    transition: all 0.3s ease;
+    tamaño de fuente: 2rem;
+    borde: ninguno;
+    cursor: puntero;
+    índice z: 1000;
+    filtro de fondo: desenfoque(10px);
+    sombra de texto: 0 0 10px rgba(255, 255, 255, 0.7);
+    transición: todos los 0,3 s de facilidad;
 }
 
-#playAudio:hover {
-    background: rgba(0, 0, 0, 0.8);
+#reproducirAudio:hover {
+    fondo: rgba(0, 0, 0, 0.8);
 }
 
-#playAudio:focus {
-    outline: none;
+#playAudio:enfoque {
+    contorno: ninguno;
 }
 
 #playAudio.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease-out;
+    opacidad: 0;
+    eventos de puntero: ninguno;
+    transición: opacidad 1s salida suave;
 }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
+    a {
+        opacidad: 1;
     }
 }
 
-.container {
-    max-width: 600px;
-    width: 100%;
+/* Ahora esto ocupará el espacio disponible */
+.contenedor {
+    ancho máximo: 600px;
+    ancho: 100%;
     color: #fff;
-    padding: 20px;
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-    text-align: center;
+    relleno: 20px;
+    opacidad: 0;
+    animación: fadeIn 1.5s hacia adelante;
+    alinear texto: centro;
+    margen: 0 auto;
+    flexión: 1;
+    pantalla: flex;
+    flexión-dirección: columna;
+    justificar-contenido: centro;
 }
 
-.main-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    margin-top: 30px;
+.título principal {
+    tamaño de fuente: 2.5em;
+    margen inferior: 20px;
+    margen superior: 30px;
     color: #fff;
-    text-shadow: 2px 2px 0px #444444, -2px -2px 0px #55007d;
-    position: relative;
-    animation: glitch 1s infinite;
+    sombra de texto: 2px 2px 0px #444444, -2px -2px 0px #55007d;
+    posición: relativa;
+    animación: fallo 1s infinito;
 }
 
-.main-title:hover {
-    transform: scale(1.05);
+.título principal:hover {
+    transformar: escala(1.05);
 }
 
-@keyframes glitch {
+Error en @keyframes {
     0% {
-        text-shadow: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
-        transform: translate(0, 0);
+        texto-sombra: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
+        transformar: traducir(0, 0);
     }
     20% {
-        text-shadow: 4px -4px 0px #444444, -4px 4px 0px rgb(112, 0, 0);
-        transform: translate(-2px, 2px);
+        texto-sombra: 4px -4px 0px #444444, -4px 4px 0px rgb(112, 0, 0);
+        transformar: traducir(-2px, 2px);
     }
     40% {
-        text-shadow: -4px 4px 0px #444444, 4px -4px 0px rgb(112, 0, 0);
-        transform: translate(2px, -2px);
+        sombra de texto: -4px 4px 0px #444444, 4px -4px 0px rgb(112, 0, 0);
+        transformar: traducir(2px, -2px);
     }
     60% {
-        text-shadow: 4px 4px 0px #444444, -4px -4px 0px rgb(112, 0, 0);
-        transform: translate(-1px, 1px);
+        sombra de texto: 4px 4px 0px #444444, -4px -4px 0px rgb(112, 0, 0);
+        transformar: traducir(-1px, 1px);
     }
     80% {
-        text-shadow: -2px -2px 0px #444444, 2px 2px 0px rgb(112, 0, 0);
-        transform: translate(1px, -1px);
+        sombra de texto: -2px -2px 0px #444444, 2px 2px 0px rgb(112, 0, 0);
+        transformar: traducir(1px, -1px);
     }
     100% {
-        text-shadow: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
-        transform: translate(0, 0);
+        texto-sombra: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
+        transformar: traducir(0, 0);
     }
 }
 
-.profile-container {
-    margin-bottom: 20px;
-    position: relative;
+.contenedor de perfil {
+    margen inferior: 20px;
+    posición: relativa;
 }
 
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid rgb(112, 0, 0);
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 15px rgb(112, 0, 0);
+.perfil-img {
+    ancho: 150px;
+    altura: 150px;
+    radio del borde: 50%;
+    objeto-ajuste: cubierta;
+    borde: 5px sólido rgb(112, 0, 0);
+    transición: transformar 0,3s facilidad;
+    caja-sombra: 0 0 15px rgb(112, 0, 0);
 }
 
-.profile-img:hover {
-    transform: scale(1.05);
+.perfil-img:hover {
+    transformar: escala(1.05);
 }
 
-.buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.contenedor de botones {
+    pantalla: flex;
+    flexión-dirección: columna;
+    espacio: 15px;
+    margen superior: 20px;
 }
 
-.button {
-    display: inline-block;
-    padding: 15px;
-    background-color: rgb(112, 0, 0);
+.botón {
+    pantalla: bloque en línea;
+    relleno: 15px;
+    color de fondo: rgb(112, 0, 0);
     color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    decoración de texto: ninguna;
+    tamaño de fuente: 18px;
+    radio del borde: 8px;
+    transición: todos los 0,3 s de facilidad;
+    cursor: puntero;
+    caja-sombra: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.button:hover {
-    background-color: rgb(112, 0, 0);
-    transform: translateY(-6px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+.botón:hover {
+    color de fondo: rgb(112, 0, 0);
+    transformar: translateY(-6px);
+    caja-sombra: 0 8px 15px rgba(0, 0, 0, 0.6);
 }
 
-.button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.botón:activo {
+    transformar: translateY(2px);
+    caja-sombra: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-    margin-top: 30px;
-    font-size: 0.9em;
+
+pie de página {
+    tamaño de fuente: 0.9em;
     color: #ccc;
-    text-align: center;
+    alinear texto: centro;
+    relleno: 15px 10px;
+    color de fondo: rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 2em;
+
+@media (ancho máximo: 768px) {
+    .título principal {
+        tamaño de fuente: 2em;
     }
 
-    .profile-img {
-        width: 120px;
-        height: 120px;
+    .perfil-img {
+        ancho: 120px;
+        altura: 120px;
     }
 
-    .button {
-        font-size: 16px;
-        padding: 12px;
+    .botón {
+        tamaño de fuente: 16px;
+        relleno: 12px;
     }
 }
