@@ -1,207 +1,207 @@
 * {
-    margen: 0;
-    relleno: 0;
-    tamaño de caja: caja de borde;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, cuerpo {
-    altura: 100%;
-    familia de fuentes: Arial, sans-serif;
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-cuerpo.diseño {
-    pantalla: flex;
-    flexión-dirección: columna;
-    altura mínima: 100vh;
-    imagen de fondo: url('fondo.jpg');
-    tamaño de fondo: portada;
-    posición de fondo: centro;
-    repetición de fondo: no repetir;
+body.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
-    posición: relativa;
+    position: relative;
 }
 
-/* Fondo oscuro semitransparente */
-cuerpo::antes {
-    contenido: '';
-    posición: absoluta;
-    arriba: 0;
-    izquierda: 0;
-    derecha: 0;
-    abajo: 0;
-    fondo: rgba(0, 0, 0, 0);
-    índice z: -1;
+/* Fondo oscuro semi-transparente */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
 }
 
-#reproducirAudio {
-    posición: fija;
-    arriba: 0;
-    izquierda: 0;
-    ancho: 100%;
-    altura: 100%;
-    pantalla: flex;
-    justificar-contenido: centro;
-    alinear-elementos: centro;
-    fondo: rgba(0, 0, 0, 0.6);
+#playAudio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    tamaño de fuente: 2rem;
-    borde: ninguno;
-    cursor: puntero;
-    índice z: 1000;
-    filtro de fondo: desenfoque(10px);
-    sombra de texto: 0 0 10px rgba(255, 255, 255, 0.7);
-    transición: todos los 0,3 s de facilidad;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
 }
 
-#reproducirAudio:hover {
-    fondo: rgba(0, 0, 0, 0.8);
+#playAudio:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
-#playAudio:enfoque {
-    contorno: ninguno;
+#playAudio:focus {
+    outline: none;
 }
 
 #playAudio.hidden {
-    opacidad: 0;
-    eventos de puntero: ninguno;
-    transición: opacidad 1s salida suave;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-out;
 }
 
 @keyframes fadeIn {
-    a {
-        opacidad: 1;
+    to {
+        opacity: 1;
     }
 }
 
-/* Ahora esto ocupará el espacio disponible */
-.contenedor {
-    ancho máximo: 600px;
-    ancho: 100%;
+/* Ahora esto ocuparÃ¡ el espacio disponible */
+.container {
+    max-width: 600px;
+    width: 100%;
     color: #fff;
-    relleno: 20px;
-    opacidad: 0;
-    animación: fadeIn 1.5s hacia adelante;
-    alinear texto: centro;
-    margen: 0 auto;
-    flexión: 1;
-    pantalla: flex;
-    flexión-dirección: columna;
-    justificar-contenido: centro;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    text-align: center;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.título principal {
-    tamaño de fuente: 2.5em;
-    margen inferior: 20px;
-    margen superior: 30px;
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    margin-top: 30px;
     color: #fff;
-    sombra de texto: 2px 2px 0px #444444, -2px -2px 0px #55007d;
-    posición: relativa;
-    animación: fallo 1s infinito;
+    text-shadow: 2px 2px 0px #444444, -2px -2px 0px #55007d;
+    position: relative;
+    animation: glitch 1s infinite;
 }
 
-.título principal:hover {
-    transformar: escala(1.05);
+.main-title:hover {
+    transform: scale(1.05);
 }
 
-Error en @keyframes {
+@keyframes glitch {
     0% {
-        texto-sombra: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
-        transformar: traducir(0, 0);
+        text-shadow: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
+        transform: translate(0, 0);
     }
     20% {
-        texto-sombra: 4px -4px 0px #444444, -4px 4px 0px rgb(112, 0, 0);
-        transformar: traducir(-2px, 2px);
+        text-shadow: 4px -4px 0px #444444, -4px 4px 0px rgb(112, 0, 0);
+        transform: translate(-2px, 2px);
     }
     40% {
-        sombra de texto: -4px 4px 0px #444444, 4px -4px 0px rgb(112, 0, 0);
-        transformar: traducir(2px, -2px);
+        text-shadow: -4px 4px 0px #444444, 4px -4px 0px rgb(112, 0, 0);
+        transform: translate(2px, -2px);
     }
     60% {
-        sombra de texto: 4px 4px 0px #444444, -4px -4px 0px rgb(112, 0, 0);
-        transformar: traducir(-1px, 1px);
+        text-shadow: 4px 4px 0px #444444, -4px -4px 0px rgb(112, 0, 0);
+        transform: translate(-1px, 1px);
     }
     80% {
-        sombra de texto: -2px -2px 0px #444444, 2px 2px 0px rgb(112, 0, 0);
-        transformar: traducir(1px, -1px);
+        text-shadow: -2px -2px 0px #444444, 2px 2px 0px rgb(112, 0, 0);
+        transform: translate(1px, -1px);
     }
     100% {
-        texto-sombra: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
-        transformar: traducir(0, 0);
+        text-shadow: 2px 2px 0px #444444, -2px -2px 0px rgb(112, 0, 0);
+        transform: translate(0, 0);
     }
 }
 
-.contenedor de perfil {
-    margen inferior: 20px;
-    posición: relativa;
+.profile-container {
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.perfil-img {
-    ancho: 150px;
-    altura: 150px;
-    radio del borde: 50%;
-    objeto-ajuste: cubierta;
-    borde: 5px sólido rgb(112, 0, 0);
-    transición: transformar 0,3s facilidad;
-    caja-sombra: 0 0 15px rgb(112, 0, 0);
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgb(112, 0, 0);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgb(112, 0, 0);
 }
 
-.perfil-img:hover {
-    transformar: escala(1.05);
+.profile-img:hover {
+    transform: scale(1.05);
 }
 
-.contenedor de botones {
-    pantalla: flex;
-    flexión-dirección: columna;
-    espacio: 15px;
-    margen superior: 20px;
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.botón {
-    pantalla: bloque en línea;
-    relleno: 15px;
-    color de fondo: rgb(112, 0, 0);
+.button {
+    display: inline-block;
+    padding: 15px;
+    background-color: rgb(112, 0, 0);
     color: rgb(0, 0, 0);
-    decoración de texto: ninguna;
-    tamaño de fuente: 18px;
-    radio del borde: 8px;
-    transición: todos los 0,3 s de facilidad;
-    cursor: puntero;
-    caja-sombra: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.botón:hover {
-    color de fondo: rgb(112, 0, 0);
-    transformar: translateY(-6px);
-    caja-sombra: 0 8px 15px rgba(0, 0, 0, 0.6);
+.button:hover {
+    background-color: rgb(112, 0, 0);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
 }
 
-.botón:activo {
-    transformar: translateY(2px);
-    caja-sombra: 0 2px 5px rgba(0, 0, 0, 0.2);
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
-pie de página {
-    tamaño de fuente: 0.9em;
+footer {
+    font-size: 0.9em;
     color: #ccc;
-    alinear texto: centro;
-    relleno: 15px 10px;
-    color de fondo: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 15px 10px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 
-@media (ancho máximo: 768px) {
-    .título principal {
-        tamaño de fuente: 2em;
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2em;
     }
 
-    .perfil-img {
-        ancho: 120px;
-        altura: 120px;
+    .profile-img {
+        width: 120px;
+        height: 120px;
     }
 
-    .botón {
-        tamaño de fuente: 16px;
-        relleno: 12px;
+    .button {
+        font-size: 16px;
+        padding: 12px;
     }
-            }
+}
